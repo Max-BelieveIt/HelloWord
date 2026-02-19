@@ -24,10 +24,10 @@ jobs:
           dotnet-version: '10.x'
 
       - name: Build with dotnet
-        run: dotnet build  -o HelloWord/HelloWord.slnx --configuration Release
+        run: dotnet build HelloWord/HelloWord.slnx --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish -c Release -o HelloWord/HelloWord.slnx
+        run: dotnet publish HelloWord/HelloWord.slnx -c Release 
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
