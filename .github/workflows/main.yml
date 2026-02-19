@@ -44,6 +44,14 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: .net-app
+
+      - name: Deploy to Azure Web App
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: HelloWorld-BelieveIt
+          publish-profile: ${{ secrets.HELLOWORLD_FORMATION_AZURE }}
+          package: ./publish
+ 
       
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
@@ -52,4 +60,4 @@ jobs:
           app-name: 'HelloWorld-BelieveIt'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.__publishingprofilesecretname__ }}
+          publish-profile: ${{ secrets.HELLOWORLD_FORMATION_AZURE }}
