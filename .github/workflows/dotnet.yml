@@ -25,7 +25,7 @@ jobs:
           dotnet-version: '10.x'
  
       - name: Restore NuGet packages
-        run: dotnet restore HelloWord/HelloWorld.slnx
+        run: dotnet restore HelloWord/HelloWord.slnx
  
       - name: Build
-        run: dotnet build HelloWord/HelloWorld.slnx --configuration Release --no-restore
+        run: dotnet build HelloWord/HelloWord.slnx --configuration Release --no-restore
